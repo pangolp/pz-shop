@@ -1,0 +1,9 @@
+name=PZ Shops
+id=pz-shop
+description=Shops for players to sell products
+poster=poster.png
+pack=npcshop
+pack=playershop
+tiledef=npcshop 1212
+tiledef=playershop 1313
+require=mod-translate
