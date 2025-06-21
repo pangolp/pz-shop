@@ -1,0 +1,8 @@
+version=1
+id=3505370758
+title=Pz shops
+description=Players Store
+description=Admin store
+description=Trade and currency exchange
+tags=Build 41;Language/Translation;Misc;Multiplayer
+visibility=unlisted
