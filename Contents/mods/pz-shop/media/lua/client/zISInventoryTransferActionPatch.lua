@@ -1,7 +1,9 @@
 local oldIsValid = ISInventoryTransferAction.isValid
+
 function ISInventoryTransferAction:isValid()
     local valid = oldIsValid(self)
     local isOwner = false
+
     if self.srcContainer then
         local parent = self.srcContainer:getParent()
         if parent and parent:getModData().owner then
@@ -10,5 +12,6 @@ function ISInventoryTransferAction:isValid()
             return (valid and isOwner)
         end
     end
+
     return valid
 end

@@ -4,13 +4,13 @@ local BClient = {}
 
 function BClient.OnReceiveGlobalModData(key, modData)
     if not modData then return end
+
     ModData.remove(key)
     ModData.add(key, modData)
 end
-Events.OnReceiveGlobalModData.Add(BClient.OnReceiveGlobalModData)
 
 function BClient.OnConnected()
-	ModData.request("CoinBalance")
+    ModData.request("CoinBalance")
 end
 
 function BClient.TransferReceived(noti)
@@ -18,12 +18,14 @@ function BClient.TransferReceived(noti)
     local sender = noti.sender
     local coin = Currency.format(noti.coin)
     local specialCoin = Currency.format(noti.specialCoin)
-    local msg = getText("IGUI_Balance_TransferReceivedSpecial",sender,coin,specialCoin)
+    local msg = getText("IGUI_Balance_TransferReceivedSpecial", sender, coin, specialCoin)
+
     if not Currency.UseSpecialCoin then
-        msg = getText("IGUI_Balance_TransferReceived",sender,coin)
+        msg = getText("IGUI_Balance_TransferReceived", sender, coin)
     end
+
     player:playSound("Notification")
-    player:setHaloNote(msg, 255,255,255,400);
+    player:setHaloNote(msg, 255, 255, 255, 400)
 end
 
 local function BS_OnServerCommand(module, command, args)
@@ -32,5 +34,6 @@ local function BS_OnServerCommand(module, command, args)
     end
 end
 
+Events.OnReceiveGlobalModData.Add(BClient.OnReceiveGlobalModData)
 Events.OnServerCommand.Add(BS_OnServerCommand)
 Events.OnConnected.Add(BClient.OnConnected)

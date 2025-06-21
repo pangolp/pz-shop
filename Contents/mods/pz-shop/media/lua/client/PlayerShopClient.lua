@@ -17,7 +17,7 @@ local function PS_OnServerCommand(module, command, args)
 end
 
 local function SyncPlayerShopStatusData()
-	sendClientCommand("PS", "SyncStatusData", {})
+    sendClientCommand("PS", "SyncStatusData", {})
     Events.OnTick.Remove(SyncPlayerShopStatusData)
 end
 

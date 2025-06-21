@@ -1,5 +1,4 @@
 UIText = {
-    
     ShopUITitle = "Valhalla Shop",
     TransferUITitle = "Transfer",
 

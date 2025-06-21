@@ -5,13 +5,15 @@ local LServer = {}
 local logfile = "shops_transactions.log"
 local msg = ""
 
-function LServer.TransactionShopLog(player,args)
+function LServer.TransactionShopLog(player, args)
     msg = args[1]
+
     if Valhalla and Valhalla.Commands then
         local args = {file = logfile, line = msg}
         Valhalla.Commands.writeToLog(nil, args)
         return
     end
+
     print(msg)
 end
 

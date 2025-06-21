@@ -1,5 +1,4 @@
 IGUI_EN = {
-    
     IGUI_Loot_All_Coins = "Loot All Coins",
     IGUI_Coins_To_Account = "Move Coins to Account",
     IGUI_Contains = "Contains",
@@ -45,15 +44,13 @@ IGUI_EN = {
     IGUI_Balance_TransferReceivedSpecial = "Transfer Received, Sender: %1, Coins: %2, Event Coins: %3",
     IGUI_Balance_AccountNeeded = "Account not found, please create one",
 
-
     IGUI_Tab_Favorite = "Favorite",
     IGUI_Tab_Sell = "Sell",
     IGUI_Tab_All = "All",
-    
+
     IGUI_Tab_Food = "Food",
     IGUI_Tab_FirstAid = "First Aid",
     IGUI_Tab_Event = "Event",
-	IGUI_Tab_Vehicles = "Vehicles",
-	IGUI_Tab_Weapons = "Weapons",
-
+    IGUI_Tab_Vehicles = "Vehicles",
+    IGUI_Tab_Weapons = "Weapons",
 }

@@ -1,5 +1,7 @@
 require "TimedActions/ISBaseTimedAction"
+
 local Nfunction = require "Nfunction"
+
 PlayerShopBuyAction = ISBaseTimedAction:derive("PlayerShopBuyAction")
 
 function PlayerShopBuyAction:isValid()
@@ -14,13 +16,12 @@ function PlayerShopBuyAction:waitToStart()
 end
 
 function PlayerShopBuyAction:update()
-    if not self.shopUI:getIsVisible() then 
+    if not self.shopUI:getIsVisible() then
         self:forceStop()
     end
 end
 
-function PlayerShopBuyAction:start()
-end
+function PlayerShopBuyAction:start() end
 
 function PlayerShopBuyAction:stop()
     ISBaseTimedAction.stop(self)
@@ -31,6 +32,7 @@ function PlayerShopBuyAction:perform()
     local playerInv = self.character:getInventory()
     local total = 0
     local totalSpecial = 0
+
     for k,v in pairs(cartItems) do
         local item = v.item
         local invItem = item.invItem
@@ -50,29 +52,36 @@ function PlayerShopBuyAction:perform()
             modData.price = nil
         end
     end
+
     local shopSquare = self.shop:getSquare()
+
     local coords = {
         x = shopSquare:getX(),
         y = shopSquare:getY(),
         z = shopSquare:getZ(),
     }
-    if SandboxVars.Shops.PurchaseLog then Nfunction.logShop(coords,"Purchase") end
+
+    if SandboxVars.Shops.PurchaseLog then Nfunction.logShop(coords, "Purchase") end
+
     self.character:playSound("CashRegister")
     local income = self.shop:getModData().income
+
     local data = {
         b = self.character:getUsername(),
         t = {tl = total, tls = totalSpecial}
     }
+
     if total > 0 or totalSpecial > 0 then
-        sendClientCommand("BS", "Withdraw", {total,totalSpecial})
-        table.insert(income,data)
+        sendClientCommand("BS", "Withdraw", {total, totalSpecial})
+        table.insert(income, data)
     end
+
     self.shop:transmitModData()
     self.shopUI:activateFirstTab()
     ISBaseTimedAction.perform(self)
 end
 
-function PlayerShopBuyAction:new(character,shopUI,ticket)
+function PlayerShopBuyAction:new(character, shopUI, ticket)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -84,4 +93,4 @@ function PlayerShopBuyAction:new(character,shopUI,ticket)
     o.stopOnRun = true
     o.maxTime = 100
     return o
-end 
+end

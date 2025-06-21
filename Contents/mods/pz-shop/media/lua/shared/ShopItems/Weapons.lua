@@ -1,3 +1,4 @@
 Shop.Items["Base.Crowbar"] = {
-    tab= Tab.Weapons, price= 250,
+    tab= Tab.Weapons,
+    price= 250
 }

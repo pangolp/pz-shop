@@ -16,13 +16,12 @@ function SendTransferAction:waitToStart()
 end
 
 function SendTransferAction:update()
-    if not self.transferUI:getIsVisible() then 
+    if not self.transferUI:getIsVisible() then
         self:forceStop()
     end
 end
 
-function SendTransferAction:start()
-end
+function SendTransferAction:start() end
 
 function SendTransferAction:stop()
     ISBaseTimedAction.stop(self)
@@ -30,13 +29,13 @@ end
 
 function SendTransferAction:perform()
     local transfer = self.transfer
-    sendClientCommand("BS", "Transfer", {transfer.coin,transfer.specialCoin,transfer.recipient})
+    sendClientCommand("BS", "Transfer", {transfer.coin, transfer.specialCoin, transfer.recipient})
     local transferUI = self.transferUI
     transferUI:clearAfterTransfer()
     ISBaseTimedAction.perform(self)
 end
 
-function SendTransferAction:new(character,transferUI,transfer)
+function SendTransferAction:new(character, transferUI, transfer)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -47,4 +46,4 @@ function SendTransferAction:new(character,transferUI,transfer)
     o.stopOnRun = true
     o.maxTime = 100
     return o
-end 
+end

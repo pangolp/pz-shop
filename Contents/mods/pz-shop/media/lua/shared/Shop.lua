@@ -8,52 +8,62 @@ Shop.defaultPrice = 1
 Shop.defaultPriceBroken = 1
 
 Shop.spritePrefix = "npcshop_"
+
 Shop.sprites = {
-	FemaleA = {
-		"npcshop_0",
-		"npcshop_1",
-	},
-	FemaleB = {
-		"npcshop_2",
-		"npcshop_3",
-	},
-	MaleA = {
-		"npcshop_4",
-		"npcshop_5",
-	},
-	MaleB = {
-		"npcshop_6",
-		"npcshop_7",
-	},
+    FemaleA = {
+        "npcshop_0",
+        "npcshop_1",
+    },
+
+    FemaleB = {
+        "npcshop_2",
+        "npcshop_3",
+    },
+
+    MaleA = {
+        "npcshop_4",
+        "npcshop_5",
+    },
+
+    MaleB = {
+        "npcshop_6",
+        "npcshop_7",
+    }
 }
 
 Shop.textures = {
-	AddButton = {
-		texture = getTexture("media/textures/ShopUI_Add.png"),
-		scale = 20
-	},
-	RemoveButton= {
-		texture = getTexture("media/textures/ShopUI_Remove.png"),
-		scale = 20
-	},
-	PreviewButton= {
-		texture = getTexture("media/textures/ShopUI_Preview.png"),
-		scale = 20
-	},
-	Browse= {
-		texture = getTexture("media/textures/ShopUI_Browse.png"),
-		scale = 20
-	},
-	Cart= {
-		texture = getTexture("media/textures/ShopUI_Cart.png"),
-		scale = 30
-	},
-	Sort= {
-		texture = getTexture("media/textures/ShopUI_Sort.png"),
-	},
-	MoveAll= {
-		texture = getTexture("media/textures/ShopUI_MoveAll.png"),
-	},
+    AddButton = {
+        texture = getTexture("media/textures/ShopUI_Add.png"),
+        scale = 20
+    },
+
+    RemoveButton = {
+        texture = getTexture("media/textures/ShopUI_Remove.png"),
+        scale = 20
+    },
+
+    PreviewButton = {
+        texture = getTexture("media/textures/ShopUI_Preview.png"),
+        scale = 20
+    },
+
+    Browse = {
+        texture = getTexture("media/textures/ShopUI_Browse.png"),
+        scale = 20
+    },
+
+    Cart = {
+        texture = getTexture("media/textures/ShopUI_Cart.png"),
+        scale = 30
+    },
+
+    Sort = {
+        texture = getTexture("media/textures/ShopUI_Sort.png")
+    },
+
+    MoveAll = {
+        texture = getTexture("media/textures/ShopUI_MoveAll.png")
+    }
 }
 
 Tab = Tab or {}
