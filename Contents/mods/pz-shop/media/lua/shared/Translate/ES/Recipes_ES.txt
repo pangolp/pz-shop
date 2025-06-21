@@ -1,0 +1,4 @@
+Recipes_ES = {
+    Recipe_Build_Player_Shop = "Construir tienda de jugador",
+    Recipe_Build_Player_Shop_Freezer = "Construye la tienda del jugador (congelador)",
+}

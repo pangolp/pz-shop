@@ -1,0 +1,5 @@
+Sandbox_AR = {
+    Sandbox_Shops= "Tiendas",
+    Sandbox_Shops_PurchaseLog = "Habilitar registros: Compras"
+    Sandbox_Shops_SellLog = "Habilitar registros: Ventas"
+}
