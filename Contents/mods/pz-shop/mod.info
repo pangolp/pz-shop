@@ -1,6 +1,6 @@
-name=Shops
-id=nshops
-description=Shops
+name=PZ Shops
+id=pz-shop
+description=Shops for players to sell products
 poster=poster.png
 pack=npcshop
 pack=playershop
